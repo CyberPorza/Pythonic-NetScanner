@@ -35,6 +35,6 @@ Bu aracın, sahibi olmadığınız veya açık rızanız bulunmayan sistemler ü
 
 Yazılımın kullanımından doğabilecek her türlü yasal sorumluluk tamamen son kullanıcıya aittir.
 
-Geliştirici (Burak), bu aracın kötüye kullanımından veya hedef sistemlerde oluşabilecek olası kesintilerden/hasarlardan dolayı hiçbir sorumluluk kabul etmez.
+Geliştirici (CyberPorza), bu aracın kötüye kullanımından veya hedef sistemlerde oluşabilecek olası kesintilerden/hasarlardan dolayı hiçbir sorumluluk kabul etmez.
 
 Bu aracı kullanarak, yukarıdaki şartları ve kullanım koşullarını kabul etmiş sayılarsınız.
