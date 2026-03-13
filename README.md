@@ -1,40 +1,52 @@
-🛡️ Pythonic Network Scanner & Recon Tool
-Bu proje, ağ üzerindeki aktif cihazların açık kapılarını (portlarını) ve bu portlarda çalışan servisleri hızlıca tespit etmek için geliştirilmiş, hafif ve etkili bir keşif (reconnaissance) aracıdır. Modern siber güvenlik süreçlerinde bilgi toplama aşamasının en temel yapı taşlarından birini temsil eder.
+# 🛡️ Pythonic-NetScanner v1.0
 
-✨ Özellikler
-Hızlı Port Keşfi: Python'ın socket kütüphanesi ve optimize edilmiş zaman aşımları (0.5s timeout) ile yüksek hızlı tarama performansı.
+A fast and efficient Network Port Scanner developed with Python. Designed for security researchers and network administrators to identify open ports and services on target systems.
 
-Servis Tanımlama (Banner Grabbing): Açık bulunan portlarda çalışan yaygın servisleri (SSH, HTTP, FTP, MySQL, vb.) otomatik olarak eşleştirir.
+## ✨ Features
+- **Fast Scanning:** Rapid discovery with optimized socket timeouts.
+- **Service Detection:** Automatically identifies common services like HTTP, SSH, FTP, and MySQL.
+- **Easy to Use:** Can be run directly from the terminal with a single command line specifying the target.
+- **Error Handling:** Robust architecture resilient to invalid IP addresses and connection drops.
 
-Hata Yönetimi: Geçersiz IP adresleri, çözülemeyen domainler ve kullanıcı müdahalelerine (KeyboardInterrupt) karşı dayanıklı yapı.
+## 🚀 Installation and Usage
 
-Şık Terminal Çıktısı: Tarama başlangıç zamanı, hedef host bilgisi ve açık port listesini temiz ve okunabilir bir formatta sunar.
+1. Clone the repository directly from the terminal:
+   ```bash
+   git clone [https://github.com/KULLANICI_ADIN/Pythonic-NetScanner.git](https://github.com/KULLANICI_ADIN/Pythonic-NetScanner.git)
 
-🚀 Kurulum ve Kullanım
-Depoyu Klonlayın:
+2. Navigate to the project directory:
+   cd Pythonic-NetScanner
 
-Dizine Geçiş Yapın:
+3. Run the tool with the target IP or domain:
+   python3 scanner.py xxx.xxx.xxx.xxx
 
-Aracı Çalıştırın:
+⚠️ Disclaimer
+This tool was developed strictly for educational purposes and ethical cybersecurity testing. Scanning systems you do not own or have explicit authorization to test is illegal. All legal responsibilities arising from the use of this software belong entirely to the user. The developer assumes no liability and is not responsible for any misuse or damage caused by this program.
 
-İnteraktif Mod: python3 scanner.py yazıp hedef IP'yi sorulduğunda girin.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hızlı Mod: python3 scanner.py <hedef-ip-veya-domain>
+# 🛡️ Pythonic-NetScanner v1.0
 
-⚙️ Teknik Detaylar
-Araç, TCP üçlü el sıkışma (three-way handshake) mantığını simüle ederek hedefe bağlantı isteği gönderir. connect_ex metodu kullanılarak portun durumu analiz edilir:
+Python ile geliştirilmiş hızlı ve etkili bir Ağ Port Tarayıcısı. Hedef sistemdeki açık portları ve servisleri tespit etmek için güvenlik araştırmacıları ve ağ yöneticileri için tasarlanmıştır.
 
-Dönen Değer 0: Port açık ve bağlantı kabul ediyor.
+## ✨ Özellikler
+- **Hızlı Tarama:** Optimize edilmiş soket zaman aşımları ile seri keşif.
+- **Servis Tespiti:** HTTP, SSH, FTP ve MySQL gibi yaygın servisleri otomatik tanır.
+- **Kolay Kullanım:** Terminal üzerinden tek satırda direkt hedef girerek çalıştırılabilir.
+- **Hata Yönetimi:** Geçersiz IP adreslerine ve bağlantı kopukluklarına karşı dayanıklı yapı.
 
-Diğer Değerler: Port kapalı veya erişilemez.
+## 🚀 Kurulum ve Kullanım
 
-⚠️ YASAL UYARI VE SORUMLULUK REDDİ
-DİKKAT: Bu yazılım sadece eğitim ve etik siber güvenlik testleri amacıyla geliştirilmiştir.
+1. Repoyu doğrudan terminalden klonlayın:
+   ```bash
+   git clone [https://github.com/KULLANICI_ADIN/Pythonic-NetScanner.git](https://github.com/KULLANICI_ADIN/Pythonic-NetScanner.git)
 
-Bu aracın, sahibi olmadığınız veya açık rızanız bulunmayan sistemler üzerinde kullanılması yasalara aykırı olabilir ve ağır yaptırımlara yol açabilir.
+2. Proje klasörüne giriş yapın:
+   cd Pythonic-NetScanner
 
-Yazılımın kullanımından doğabilecek her türlü yasal sorumluluk tamamen son kullanıcıya aittir.
+3. Aracı hedef IP veya domain ile çalıştırın:
+   python3 scanner.py xxx.xxx.xxx.xxx
 
-Geliştirici (CyberPorza), bu aracın kötüye kullanımından veya hedef sistemlerde oluşabilecek olası kesintilerden/hasarlardan dolayı hiçbir sorumluluk kabul etmez.
+⚠️ Yasal Uyarı ve Sorumluluk Reddi (Disclaimer)
+Bu araç sadece eğitim ve etik siber güvenlik testleri amacıyla geliştirilmiştir. Yetkiniz olmayan veya size ait olmayan sistemler üzerinde tarama yapmak yasalara aykırıdır. Bu yazılımın kullanımından doğabilecek her türlü yasal sorumluluk tamamen kullanıcıya aittir. Geliştirici, aracın kötüye kullanımıyla ilgili hiçbir sorumluluk kabul etmez.
 
-Bu aracı kullanarak, yukarıdaki şartları ve kullanım koşullarını kabul etmiş sayılarsınız.
