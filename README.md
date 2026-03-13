@@ -12,7 +12,7 @@ A fast and efficient Network Port Scanner developed with Python. Designed for se
 
 1. Clone the repository directly from the terminal:
    ```bash
-   git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/KULLANICI_ADIN/Pythonic-NetScanner.git)
+   git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/CyberPorza/Pythonic-NetScanner.git)
 
 2. Navigate to the project directory:
    cd Pythonic-NetScanner
@@ -39,7 +39,7 @@ Python ile geliştirilmiş hızlı ve etkili bir Ağ Port Tarayıcısı. Hedef s
 
 1. Repoyu doğrudan terminalden klonlayın:
    ```bash
-   git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/KULLANICI_ADIN/Pythonic-NetScanner.git)
+   git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/CyberPorza/Pythonic-NetScanner.git)
 
 2. Proje klasörüne giriş yapın:
    cd Pythonic-NetScanner
