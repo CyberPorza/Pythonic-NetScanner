@@ -1,52 +1,62 @@
-import socket
+import requests
 import sys
-from datetime import datetime
 
-def port_scanner(target):
-    try:
-        ip = socket.gethostbyname(target)
-    except socket.gaierror:
-        print("\n [!] Hostname could not be resolved. Invalid IP/Domain.")
+def finder():
+    green = "\033[1;32m"
+    red = "\033[1;31m"
+    reset = "\033[0m"
+    blue = "\033[1;34m"
+
+    banner = r"""
+    ______________________________________________________________
+    
+     ______      __             ____                      
+    / ____/_  __/ /_  ___  ____/ __ \____  _____________ _
+   / /   / / / / __ \/ _ \/ __/ /_/ / __ \/ ___/_  / __ `/
+  / /___/ /_/ / /_/ /  __/ / / ____/ /_/ / /    / /_/ /_/ 
+  \____/\__, /_.___/\___/_/ /_/    \____/_/    /___/\__,_/  
+       /____/                                              
+                        v1.1 - Powered by CyberPorza 🛡️
+    ______________________________________________________________
+    """
+    
+    print(green + banner + reset)
+
+    if len(sys.argv) < 2:
+        print(red + " [!] Usage: python3 finder.py <target_domain>" + reset)
+        print(blue + " Example: python3 finder.py google.com" + reset)
         sys.exit()
 
-    print("=" * 50)
-    print("      [ 🛡️  Coded by CyberPorza ]")
-    print("=" * 50)
-    print(f" Scan Started: {ip}")
-    print(f" Time: {str(datetime.now())}")
-    print("-" * 50)
+    domain = sys.argv[1]
+    
+    
+    subdomains = [
+        "www", "mail", "ftp", "localhost", "dev", "test", 
+        "admin", "blog", "cpanel", "api", "shop", "staging"
+    ]
+    
+    print(f"{blue} [*] Scanning subdomains for: {domain} ...{reset}")
+    print("-" * 62)
 
-    common_ports = {
-        21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 
-        53: "DNS", 80: "HTTP", 443: "HTTPS", 3306: "MySQL", 
-        3389: "RDP", 8080: "HTTP-Proxy"
-    }
-
+    found_count = 0
     try:
-        for port in range(1, 1025): 
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            socket.setdefaulttimeout(0.5)
+        for sub in subdomains:
+            url = f"http://{sub}.{domain}"
+            try:
+                response = requests.get(url, timeout=1)
+                if response.status_code < 400:
+                    print(f"{green} [+] Found: {url} (Status: {response.status_code}){reset}")
+                    found_count += 1
+            except requests.ConnectionError:
+                pass
             
-            result = s.connect_ex((ip, port))
-            if result == 0:
-                service = common_ports.get(port, "Unknown Service")
-                print(f" [+] Port {port} is Open \t [Service: {service}]")
-            s.close()
-
     except KeyboardInterrupt:
-        print("\n [!] Process interrupted by user.")
-        sys.exit()
-    except Exception as e:
-        print(f"\n [!] Error: {e}")
+        print(red + "\n [!] Scan interrupted by CyberPorza." + reset)
         sys.exit()
 
-    print("-" * 50)
-    print(" Scan Completed.")
+    print("-" * 62)
+    print(f"{blue} [*] Scan complete. Found {found_count} subdomains.{reset}")
+    print("=" * 62)
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        target_ip = sys.argv[1]
-    else:
-        target_ip = input("Enter Target IP or Domain: ")
-    
-    port_scanner(target_ip)
+    finder()
