@@ -15,9 +15,11 @@ A fast and efficient Network Port Scanner developed with Python. Designed for se
    git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/CyberPorza/Pythonic-NetScanner.git)
 
 2. Navigate to the project directory:
+
    cd Pythonic-NetScanner
 
-3. Run the tool with the target IP or domain:
+4. Run the tool with the target IP or domain:
+
    python3 scanner.py xxx.xxx.xxx.xxx
 
 ⚠️ Disclaimer
@@ -42,9 +44,11 @@ Python ile geliştirilmiş hızlı ve etkili bir Ağ Port Tarayıcısı. Hedef s
    git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/CyberPorza/Pythonic-NetScanner.git)
 
 2. Proje klasörüne giriş yapın:
+
    cd Pythonic-NetScanner
 
-3. Aracı hedef IP veya domain ile çalıştırın:
+4. Aracı hedef IP veya domain ile çalıştırın:
+
    python3 scanner.py xxx.xxx.xxx.xxx
 
 ⚠️ Yasal Uyarı ve Sorumluluk Reddi (Disclaimer)
