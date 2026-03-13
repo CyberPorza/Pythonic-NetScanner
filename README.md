@@ -1,25 +1,25 @@
-# 🛡️ Pythonic-NetScanner v1.0
+🛡️ Pythonic-NetScanner v1.0
 
 A fast and efficient Network Port Scanner developed with Python. Designed for security researchers and network administrators to identify open ports and services on target systems.
 
-## ✨ Features
+✨ Features
 - **Fast Scanning:** Rapid discovery with optimized socket timeouts.
 - **Service Detection:** Automatically identifies common services like HTTP, SSH, FTP, and MySQL.
 - **Easy to Use:** Can be run directly from the terminal with a single command line specifying the target.
 - **Error Handling:** Robust architecture resilient to invalid IP addresses and connection drops.
 
-## 🚀 Installation and Usage
+🚀 Installation and Usage
 
 1. Clone the repository directly from the terminal:
    ```bash
    git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/CyberPorza/Pythonic-NetScanner.git)
 
 2. Navigate to the project directory:
-
+    ```bash
    cd Pythonic-NetScanner
 
 4. Run the tool with the target IP or domain:
-
+    ```bash
    python3 scanner.py xxx.xxx.xxx.xxx
 
 ⚠️ Disclaimer
@@ -44,11 +44,11 @@ Python ile geliştirilmiş hızlı ve etkili bir Ağ Port Tarayıcısı. Hedef s
    git clone [https://github.com/CyberPorza/Pythonic-NetScanner.git](https://github.com/CyberPorza/Pythonic-NetScanner.git)
 
 2. Proje klasörüne giriş yapın:
-
+    ```bash
    cd Pythonic-NetScanner
 
 4. Aracı hedef IP veya domain ile çalıştırın:
-
+    ```bash
    python3 scanner.py xxx.xxx.xxx.xxx
 
 ⚠️ Yasal Uyarı ve Sorumluluk Reddi (Disclaimer)
