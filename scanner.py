@@ -6,15 +6,16 @@ def port_scanner(target):
     try:
         ip = socket.gethostbyname(target)
     except socket.gaierror:
-        print("\n [!] Hostname çözülemedi. Geçersiz IP/Domain.")
+        print("\n [!] Hostname could not be resolved. Invalid IP/Domain.")
         sys.exit()
 
-    print("-" * 50)
-    print(f" Tarama Başlatıldı: {ip}")
-    print(f" Zaman: {str(datetime.now())}")
+    print("=" * 50)
+    print("      [ 🛡️  Coded by CyberPorza ]")
+    print("=" * 50)
+    print(f" Scan Started: {ip}")
+    print(f" Time: {str(datetime.now())}")
     print("-" * 50)
 
-    # En yaygın 100 portu ve servislerini tarayalım
     common_ports = {
         21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 
         53: "DNS", 80: "HTTP", 443: "HTTPS", 3306: "MySQL", 
@@ -22,30 +23,30 @@ def port_scanner(target):
     }
 
     try:
-        for port in range(1, 1025): # 1024'e kadar tara
+        for port in range(1, 1025): 
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            socket.setdefaulttimeout(0.5) # Hız için timeout'u düşürdük
+            socket.setdefaulttimeout(0.5)
             
             result = s.connect_ex((ip, port))
             if result == 0:
-                service = common_ports.get(port, "Bilinmeyen Servis")
-                print(f" [+] Port {port} Açık \t [Servis: {service}]")
+                service = common_ports.get(port, "Unknown Service")
+                print(f" [+] Port {port} is Open \t [Service: {service}]")
             s.close()
 
     except KeyboardInterrupt:
-        print("\n [!] İşlem kullanıcı tarafından durduruldu.")
+        print("\n [!] Process interrupted by user.")
         sys.exit()
     except Exception as e:
-        print(f"\n [!] Hata: {e}")
+        print(f"\n [!] Error: {e}")
         sys.exit()
 
     print("-" * 50)
-    print(" Tarama Tamamlandı.")
+    print(" Scan Completed.")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         target_ip = sys.argv[1]
     else:
-        target_ip = input("Hedef IP veya Domain girin: ")
+        target_ip = input("Enter Target IP or Domain: ")
     
     port_scanner(target_ip)
